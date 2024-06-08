@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+    }
+    .pink-heart {
+
+      color: deeppink;
+    }
+    .album-container {
+      width: 80%;
+      margin: auto;
+      max-width: 1200px;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-gap: 15px;
+      padding: 15px;
+    }
+    .gallery-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+    .modal-content, #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)}
+      to {-webkit-transform:scale(1)}
+    }
+    @keyframes zoom {
+      from {transform:scale(0)}
+      to {transform:scale(1)}
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .our-love {
+      text-align: center;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .heart {
+      display: inline-block;
+      width: 1em;
+      height: 0.8em;
+      margin: 0 0.1em;
+      background-color: deeppink;
+      transform: rotate(-45deg);
+      position: relative;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 1em;
+      height: 0.8em;
+      background-color: deeppink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      left: 0;
+      top: -0.4em;
+    }
+
+    .heart::after {
+      right: 0;
+      top: -0.4em;
+    }
+
+    .our-love:hover .heart {
+      animation: heartbeat 1s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="album-container">
+  <h1 style="color: deeppink">Our Memories</h1>
+  <div class="gallery">
+    <img class='gallery-image' src='images/album/photo_1_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_2_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_3_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_4_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_5_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_6_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_7_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_8_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_9_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_10_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_11_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_12_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_13_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_14_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_15_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_16_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_17_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_18_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+    <img class='gallery-image' src='images/album/photo_19_2024-06-08_23-32-29.jpg'  onclick='openModal(this);'>
+
+
+
+
+
+  </div>
+  <h2 class="our-love" onclick="window.location.href = 'content.html';">
+    Our <span class="heart"></span> Love <span class="heart"></span>
+  </h2>
+
+</div>
+
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+  function openModal(img) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.innerHTML = img.alt;
+  }
+
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+</script>
+
+</body>
+</html>
